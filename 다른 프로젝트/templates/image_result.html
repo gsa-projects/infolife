@@ -1,0 +1,53 @@
+<!--기존 코드임-->
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>{{ title }}</title>-->
+<!--    &lt;!&ndash; styles.css를 연결 &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="/static/css/styles.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>{{ message }}</h1>-->
+<!--    <img class="full-width" src="/static/results/result.png" alt="Description">-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Count People-결과물입니다!</title>
+	</head>
+	<style>
+        .full-width {
+            width: 60%;
+            height: auto;
+        }
+
+        .full-height {
+            height: 60%;
+            width: auto;
+        }
+	</style>
+	</head>
+	<body>
+		<h1>{{ message }}</h1>
+		<p>사진 속에 있는 사람 수입니다.</p>
+		<p>사각형으로 센 사람의 수가 표현되어 있습니다.</p>
+		<img src={{path}} onload="adjustImageSize(this)">
+		
+		<script>
+            function adjustImageSize(img) {
+                if (img.naturalWidth > img.naturalHeight) {
+                    img.className = 'full-width';
+                } else {
+                    img.className = 'full-height';
+                }
+            }
+		</script>
+	
+	</body>
+</html>
